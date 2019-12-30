@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template 
 app = Flask(__name__)
 from database import db_session
 from models import MusicScale, MusicScaleName
@@ -6,7 +6,7 @@ from sqlalchemy.orm import joinedload, Load
 
 @app.route('/')
 def index():
-    return 'index'
+    return render_template('index.html')
 
 @app.route('/api/scales')
 def all_scales():
