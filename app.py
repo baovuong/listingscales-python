@@ -1,7 +1,8 @@
 from flask import Flask
 app = Flask(__name__)
-
-
+from database import db_session
+from models import MusicScale, MusicScaleName
+from sqlalchemy.orm import joinedload, Load 
 
 @app.route('/')
 def index():
@@ -9,4 +10,14 @@ def index():
 
 @app.route('/api/scales')
 def all_scales():
-    return 'return all scales'
+    scales = db_session.query(MusicScale).options(
+        joinedload(MusicScale.names, innerjoin=True),
+        Load(MusicScale).raiseload('*')
+    )
+    return {
+        'scales': [s.serialize() for s in scales]
+    } 
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
