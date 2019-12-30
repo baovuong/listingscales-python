@@ -16,7 +16,7 @@ def main():
         for scale in data:
             print(scale)
             session.add(models.MusicScale(names=scale['names'], intervals=scale['intervals'], tones=scale['tones'], root=scale['root']))
-            session.commit()
+        session.commit()
         database.shutdown_session()
 
 if __name__ == '__main__':
