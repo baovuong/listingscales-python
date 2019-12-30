@@ -10,10 +10,12 @@ def index():
 
 @app.route('/api/scales')
 def all_scales():
+
     scales = db_session.query(MusicScale).options(
         joinedload(MusicScale.names, innerjoin=True),
         Load(MusicScale).raiseload('*')
-    )
+    ).filter(MusicScale.tones == 12)
+
     return {
         'scales': [s.serialize() for s in scales]
     } 
