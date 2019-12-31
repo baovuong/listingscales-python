@@ -23,7 +23,7 @@ export default class MusicScaleList extends React.Component {
     componentDidMount() {
         axios.get('/api/scales?tones=12')
             .then(res => {
-                const scales = res.data;
+                const scales = res.data['scales'];
                 scales.forEach(s => {
                     s.searchableNames = s.names
                         .map(n => n.toLowerCase())

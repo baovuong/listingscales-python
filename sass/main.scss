@@ -1,0 +1,206 @@
+@import '~foundation';
+
+@media (min-width:320px)  { 
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+    select {
+        margin: 0;
+    }
+
+    #app {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+    }
+
+    #container {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        order: 1;
+    }
+
+    #controls {
+        display: flex;
+        flex-direction: row;
+        box-orient: horizontal;
+        width: 100%;
+        order: 2;
+        margin: 0;
+
+        flex-shrink: 0;
+    }
+
+    #query {
+        width: 100%;
+    }
+
+    #musicScaleList {
+        width: 100%;
+        -ms-flex-order: 2;
+        order: 2;
+        border-top: 3px solid #e9e9e9;
+    }
+
+    ul#results {
+        height: calc(100vh - 205px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+    #musicScaleView {
+        overflow-x: auto;
+        width: 100%;
+        -ms-flex-order: 1;
+        order: 1;
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+
+            select {
+                flex-basis: 50%;
+            }
+        }
+    }
+    
+
+    #scaleNames {
+        .desktop {
+            display: none;
+        }
+        .mobile {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+    }
+
+    #scaleNotation {
+        overflow-x: auto;
+        margin: auto;
+        text-align: center;
+    }
+
+    .switch.large {
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+
+    select {
+        margin: 0 0 1rem;
+    }
+
+    #container {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+        order: 2;
+        
+    }
+
+    #controls {
+        position: auto;
+        bottom: auto;
+        order: 1;
+        margin: auto;
+    }
+
+    #query {
+        width: 35vw;
+    } 
+
+    #musicScaleList {
+        width: 35vw;
+        order: 1;
+    }
+
+    ul#results {
+        overflow-y: auto;
+        height: 93vh;
+        -webkit-overflow-scrolling: touch;
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+    #musicScaleView {
+        overflow-x: auto;
+        width: 75%;
+        order: 2;
+        .header {
+            display: block;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            select {
+                flex-basis: auto;
+            }
+        }
+    }
+    #scaleNames {
+        .desktop {
+            display: block;
+        }
+        .mobile {
+            display: none;
+        }
+    }
+    #scaleNotation {
+        overflow-x: auto;
+        text-align: left;
+    }
+
+    .switch.large {
+        text-align: left;
+        margin: auto;
+    }
+}
+
+html,body { height:100%; }
+
+ul#results {
+    li {
+        border-bottom: 1px solid #e9e9e9;
+        padding: 5px;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        white-space: nowrap;
+    }
+}
+
+
+
+.selected {
+    background-color: #b8dfe0;
+}
