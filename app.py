@@ -1,8 +1,9 @@
 from flask import Flask, render_template 
-app = Flask(__name__)
 from database import db_session
 from models import MusicScale, MusicScaleName
 from sqlalchemy.orm import joinedload, Load 
+
+app = Flask(__name__)
 
 @app.route('/')
 def index():
@@ -23,3 +24,6 @@ def all_scales():
 @app.teardown_appcontext
 def shutdown_session(exception=None):
     db_session.remove()
+
+if __name__ == '__main__':
+ app.run()
