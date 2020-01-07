@@ -26,4 +26,4 @@ def shutdown_session(exception=None):
     db_session.remove()
 
 if __name__ == '__main__':
- app.run()
+    app.run(debug = True, host='0.0.0.0')
