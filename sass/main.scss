@@ -1,5 +1,5 @@
-@import '~foundation';
-
+@import 'foundation-sites/scss/foundation';
+@include foundation-everything();
 @media (min-width:320px)  { 
     /* smartphones, iPhone, portrait 480x320 phones */
 

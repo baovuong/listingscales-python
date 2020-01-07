@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import MusicScaleList from './components/musicScaleList';
 import MusicScaleView from './components/musicScaleView';
 
+import '../sass/main.scss';
+
 export class App extends React.Component {
 
     constructor(props) {
