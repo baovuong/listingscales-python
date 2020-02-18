@@ -9,7 +9,7 @@ module.exports = {
     cache: true,
     plugins: [ new webpack.LoaderOptionsPlugin({ debug: true }) ],
     output: {
-        path: __dirname + '/static',
+        path: __dirname + '/app/static',
         filename: 'bundle.js'
     },
     module: {

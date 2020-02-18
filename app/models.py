@@ -1,6 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, TypeDecorator
 from sqlalchemy.orm import relationship 
-from database import Base 
+from app.database import Base 
 
 class MusicScale(Base):
     __tablename__ = 'music_scales'

@@ -1,6 +1,6 @@
 from flask import Flask, render_template 
-from database import db_session
-from models import MusicScale, MusicScaleName
+from app.database import db_session
+from app.models import MusicScale, MusicScaleName
 from sqlalchemy.orm import joinedload, Load 
 
 app = Flask(__name__)
