@@ -28,7 +28,7 @@
     "axios": "^0.19.1",
     "fibers": "^4.0.2",
     "foundation-sites": "^6.6.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
