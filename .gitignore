@@ -5,3 +5,4 @@ __pycache__
 *.db
 node_modules
 static
+*.log
